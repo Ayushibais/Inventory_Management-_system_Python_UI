@@ -1,3 +1,4 @@
+live project link : https://inventorymanagement-systempythonui-4fzhqktcw9tpkl264vursn.streamlit.app/
 # Inventory_Management-_system_Python_UI
 <img width="595" height="266" alt="image" src="https://github.com/user-attachments/assets/ca673f8b-1dbf-40f2-8bf8-85f17577b5af" />
 <img width="566" height="233" alt="image" src="https://github.com/user-attachments/assets/a996f374-8370-423a-ac77-df2d37ebd92a" />
