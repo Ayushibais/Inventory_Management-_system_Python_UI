@@ -1,11 +1,17 @@
+/* import mysql.connector
+
+import streamlit as st
 import mysql.connector
 
 def connect_to_db():
     return mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="CampusX@21",
-    database="dummy_project")
+        host=st.secrets["mysql"]["host"],
+        port=int(st.secrets["mysql"]["port"]),
+        user=st.secrets["mysql"]["user"],
+        password=st.secrets["mysql"]["password"],
+        database=st.secrets["mysql"]["database"],
+        ssl_disabled=False,
+    )
 
 
 def get_basic_info(cursor):
