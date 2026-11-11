@@ -1,9 +1,109 @@
-live project link : https://inventorymanagement-systempythonui-4fzhqktcw9tpkl264vursn.streamlit.app/
-# Inventory_Management-_system_Python_UI
-<img width="595" height="266" alt="image" src="https://github.com/user-attachments/assets/ca673f8b-1dbf-40f2-8bf8-85f17577b5af" />
-<img width="566" height="233" alt="image" src="https://github.com/user-attachments/assets/a996f374-8370-423a-ac77-df2d37ebd92a" />
-<img width="503" height="185" alt="image" src="https://github.com/user-attachments/assets/d3644bd7-8041-4de4-aab6-19cfb6886d18" />
-<img width="540" height="325" alt="image" src="https://github.com/user-attachments/assets/fa0a8dde-f486-414e-9a75-e79d77b56650" />
+# Inventory and Supply Chain Dashboard
+
+An interactive dashboard built with **Python, Streamlit and SQL** that tracks inventory, suppliers, stock movement and reorders. Data is stored in a cloud-hosted MySQL-compatible database (TiDB Cloud), and the app is deployed on Streamlit Community Cloud.
+
+**Live app:** https://inventorymanagement-systempythonui-4fzhqktcw9tpkl264vursn.streamlit.app
+
+![Dashboard screenshot](dashboard.png)
+
+> Add a screenshot of your dashboard to the repository, name it `dashboard.png`, and it will show up above.
+
+## What the project does
+
+The dashboard has two sections, chosen from the sidebar:
+
+- **Basic Information:** headline inventory metrics calculated live from the database
+  - Total suppliers
+  - Total products
+  - Total product categories
+  - Total sale value in the last 3 months
+  - Total restock value in the last 3 months
+  - Products below reorder level with no pending reorder
+- **Operational Tasks:** day-to-day inventory operations on top of the same database
+
+## Tech stack
+
+| Area | Tools |
+|------|-------|
+| Language | Python |
+| Web UI | Streamlit |
+| Database | MySQL-compatible (TiDB Cloud) |
+| Data handling | Pandas, mysql-connector-python |
+| Hosting | Streamlit Community Cloud |
+
+## Database design
+
+The database `inventory_db` has 5 related tables:
+
+- `products`: product details, category and price
+- `suppliers`: supplier information
+- `stock_entries`: every stock change (sales, restocks) with date and quantity
+- `shipments`: incoming shipment records
+- `reorders`: reorder requests and their status
+
+## SQL skills used
+
+The queries in the `sql/` folder use:
+
+- Joins across multiple tables
+- Aggregations (`COUNT`, `SUM`, `ROUND`, `COUNT(DISTINCT ...)`)
+- Subqueries
+- Date functions such as `DATE_SUB` for rolling 3-month windows
+- Filtering on change type (sale vs restock)
+
+## Project structure
+
+```
+inventory_management-_system_python_ui/
+├── app.py              # Streamlit user interface
+├── db_functions.py     # Database connection and query functions
+├── requirements.txt    # Python dependencies
+├── data/               # CSV files used to load the database
+├── sql/                # SQL queries used for analysis
+└── README.md
+```
+
+## Run it locally
+
+1. Clone the repository:
+   ```
+   git clone https://github.com/ayushibais/inventory_management-_system_python_ui.git
+   cd inventory_management-_system_python_ui
+   ```
+2. Install dependencies:
+   ```
+   pip install -r requirements.txt
+   ```
+3. Create a file `.streamlit/secrets.toml` with your own database details:
+   ```
+   [mysql]
+   host = "your-host"
+   port = 3306
+   user = "your-user"
+   password = "your-password"
+   database = "inventory_db"
+   ```
+4. Load the CSV files from `data/` into your database as tables with the names listed above.
+5. Start the app:
+   ```
+   streamlit run app.py
+   ```
+
+## Security note
+
+Database credentials are not stored in the code. They are read from Streamlit Secrets (`st.secrets`) so they never appear in the public repository.
+
+## Key learnings
+
+- Designing a relational database and loading data from CSV files
+- Writing SQL for business questions such as sales value, restock value and reorder alerts
+- Connecting a Python app to a cloud database securely
+- Deploying a data application end to end
+
+## Author
+
+**[Your Name]**
+[LinkedIn link] | [Email]# Inventory_Management-_system_Python_UI
 
 
 <img width="898" height="393" alt="image" src="https://github.com/user-attachments/assets/1949d6f8-98f8-4b51-a55e-04bff74da064" />
