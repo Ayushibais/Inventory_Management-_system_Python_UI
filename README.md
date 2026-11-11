@@ -99,8 +99,8 @@ Database credentials are not stored in the code. They are read from Streamlit Se
 
 ## Author
 
-**[Your Name]**
-[LinkedIn link] | [Email]# Inventory_Management-_system_Python_UI
+**[Ayushi Bais]**
+[https://www.linkedin.com/in/ayushi-bais-a5620b212?utm_source=share_via&utm_content=profile&utm_medium=member_ios] | [ayushib1219@gmail.com]# Inventory_Management-_system_Python_UI
 
 
 <img width="898" height="393" alt="image" src="https://github.com/user-attachments/assets/1949d6f8-98f8-4b51-a55e-04bff74da064" />
