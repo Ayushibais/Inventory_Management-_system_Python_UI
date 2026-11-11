@@ -4,9 +4,6 @@ An interactive dashboard built with **Python, Streamlit and SQL** that tracks in
 
 **Live app:** https://inventorymanagement-systempythonui-4fzhqktcw9tpkl264vursn.streamlit.app
 
-![Dashboard screenshot](dashboard.png)
-
-> Add a screenshot of your dashboard to the repository, name it `dashboard.png`, and it will show up above.
 
 ## What the project does
 
